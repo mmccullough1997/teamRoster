@@ -1,4 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
 
 html,
 body {
@@ -19,4 +20,8 @@ a {
 
 body {
   background-color: #88effd;
+}
+
+.homeHeader {
+  font-family: 'Square Peg';
 }

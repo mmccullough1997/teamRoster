@@ -1,3 +1,5 @@
+import { faTrashCan, faPenToSquare } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
@@ -22,10 +24,10 @@ function PlayerCard({ playerObj, onUpdate }) {
         <p className="card-text bold">Favorite Food: {playerObj.favorite_food}</p>
         <p className="card-text bold">Fun Fact: {playerObj.fun_fact}</p>
         <Link href={`/player/edit/${playerObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button variant="info"><FontAwesomeIcon icon={faPenToSquare} /></Button>
         </Link>
         <Button variant="danger" onClick={deleteThePlayer} className="m-2">
-          DELETE
+          <FontAwesomeIcon icon={faTrashCan} />
         </Button>
       </Card.Body>
     </Card>
