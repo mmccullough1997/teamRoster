@@ -19,7 +19,7 @@ function Home() {
 
   return (
     <>
-      <h1 className="homeHeader">Welcome, {user.displayName}!</h1>
+      <h1 className="homeHeader">Welcome, Coach {user.displayName}!</h1>
       <div className="d-flex flex-wrap">
         {players.map((player) => (
           <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllPlayers} />
