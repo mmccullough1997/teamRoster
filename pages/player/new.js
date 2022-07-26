@@ -1,5 +1,5 @@
 import PlayerForm from '../../components/forms/PlayerForm';
 
-export default function AddPlayer() {
-  return <PlayerForm />;
+export default function newPlayer() {
+  return (<PlayerForm />);
 }
