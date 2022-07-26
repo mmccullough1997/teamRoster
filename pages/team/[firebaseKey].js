@@ -16,6 +16,10 @@ export default function ViewTeam() {
     viewTeamDetails(firebaseKey).then(setTeamDetails);
   }, [firebaseKey]);
 
+  const getAllTheSingleTeamsPlayers = () => {
+    console.warn('Do something?');
+  };
+
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
@@ -36,7 +40,7 @@ export default function ViewTeam() {
       </div>
       <div className="d-flex flex-wrap">
         {players.map((player) => (
-          <PlayerCard key={player.firebaseKey} playerObj={player} />
+          <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllTheSingleTeamsPlayers} />
         ))}
       </div>
     </div>

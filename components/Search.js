@@ -13,7 +13,7 @@ export default function Search({ players, setFilteredPlayers }) {
 
   return (
     <>
-      <input placeholder="Name" value={searchInput} onChange={handleChange} />
+      <input placeholder="Search" value={searchInput} onChange={handleChange} />
     </>
   );
 }

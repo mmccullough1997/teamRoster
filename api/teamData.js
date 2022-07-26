@@ -53,6 +53,13 @@ const getSingleTeamsPlayers = (firebaseKey) => new Promise((resolve, reject) => 
     .catch((error) => reject(error));
 });
 
+const getTeamName = (firebaseKey) => new Promise((resolve, reject) => {
+  getSingleTeam(firebaseKey).then((team) => {
+    resolve(team.name);
+  })
+    .catch((error) => reject(error));
+});
+
 export {
   getTeams,
   createTeam,
@@ -60,4 +67,5 @@ export {
   deleteTeam,
   updateTeam,
   getSingleTeamsPlayers,
+  getTeamName,
 };

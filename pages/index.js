@@ -4,15 +4,19 @@ import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 import { getTeams } from '../api/teamData';
+import Search from '../components/Search';
 import TeamCard from '../components/TeamCard';
 
 function Teams() {
   const [teams, setTeams] = useState([]);
-
+  const [filteredTeams, setFilteredTeams] = useState([]);
   const { user } = useAuth();
 
   const getAllTheTeams = () => {
-    getTeams(user.uid).then(setTeams);
+    getTeams(user.uid).then((theTeams) => {
+      setTeams(theTeams);
+      setFilteredTeams(theTeams);
+    });
   };
 
   useEffect(() => {
@@ -24,8 +28,9 @@ function Teams() {
       <Link href="/team/new" passHref>
         <Button>Add Team</Button>
       </Link>
+      <Search players={teams} setFilteredPlayers={setFilteredTeams} />
       <div className="d-flex flex-wrap">
-        {teams.map((team) => (
+        {filteredTeams.map((team) => (
           <TeamCard key={team.firebaseKey} teamObj={team} onUpdate={getAllTheTeams} />
         ))}
       </div>

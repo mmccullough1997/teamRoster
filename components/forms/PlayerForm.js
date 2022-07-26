@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { createPlayer, updatePlayers } from '../../api/playersData';
+import { getTeams } from '../../api/teamData';
 
 const initialState = {
   name: '',
@@ -18,10 +19,12 @@ const initialState = {
 
 function PlayerForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
+  const [teams, setTeams] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
+    getTeams(user.uid).then(setTeams);
     if (obj.firebaseKey) setFormInput(obj);
   }, [obj, user]);
 
@@ -58,6 +61,29 @@ function PlayerForm({ obj }) {
         <Form.Control type="text" placeholder="Enter Expense Name" name="name" value={formInput.name} onChange={handleChange} required />
       </FloatingLabel>
 
+      <FloatingLabel controlId="floatingSelect" label="Team">
+        <Form.Select
+          aria-label="Team"
+          name="team_id"
+          onChange={handleChange}
+          className="mb-3"
+          required
+        >
+          <option value="">Select Team</option>
+          {
+            teams.map((team) => (
+              <option
+                key={team.firebaseKey}
+                value={team.firebaseKey}
+                selected={obj.team_id === team.firebaseKey}
+              >
+                {team.name}
+              </option>
+            ))
+          }
+        </Form.Select>
+      </FloatingLabel>
+
       <FloatingLabel controlId="floatingInput3" label="Position" className="mb-3">
         <Form.Control type="text" placeholder="Enter Player Position" name="position" value={formInput.position} onChange={handleChange} required />
       </FloatingLabel>
@@ -91,6 +117,7 @@ PlayerForm.propTypes = {
     favorite_food: PropTypes.string,
     fun_fact: PropTypes.string,
     image: PropTypes.string,
+    team_id: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };
