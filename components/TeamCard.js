@@ -44,8 +44,8 @@ function TeamCard({ teamObj, onUpdate }) {
 TeamCard.propTypes = {
   teamObj: PropTypes.shape({
     name: PropTypes.string,
-    wins: PropTypes.string,
-    losses: PropTypes.string,
+    wins: PropTypes.number,
+    losses: PropTypes.number,
     coach: PropTypes.string,
     image: PropTypes.string,
     firebaseKey: PropTypes.string,
