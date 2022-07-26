@@ -28,7 +28,7 @@ function Teams() {
       <Link href="/team/new" passHref>
         <Button>Add Team</Button>
       </Link>
-      <Search players={teams} setFilteredPlayers={setFilteredTeams} />
+      <Search players={teams} setFilteredPlayers={setFilteredTeams} onUpdate={getAllTheTeams} />
       <div className="d-flex flex-wrap">
         {filteredTeams.map((team) => (
           <TeamCard key={team.firebaseKey} teamObj={team} onUpdate={getAllTheTeams} />

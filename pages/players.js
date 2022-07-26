@@ -32,7 +32,7 @@ export default function Home() {
           <Button>Add Player</Button>
         </Link>
       </div>
-      <Search players={players} setFilteredPlayers={setFilteredPlayers} />
+      <Search players={players} setFilteredPlayers={setFilteredPlayers} onUpdate={getAllPlayers} />
       <div className="d-flex flex-wrap">
         {filteredPlayers.map((player) => (
           <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllPlayers} />

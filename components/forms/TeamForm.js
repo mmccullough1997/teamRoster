@@ -9,8 +9,8 @@ import { createTeam, updateTeam } from '../../api/teamData';
 
 const initialState = {
   name: '',
-  wins: 0,
-  losses: 0,
+  wins: '',
+  losses: '',
   coach: '',
   image: '',
 };
@@ -84,8 +84,8 @@ function TeamForm({ obj }) {
 TeamForm.propTypes = {
   obj: PropTypes.shape({
     name: PropTypes.string,
-    wins: PropTypes.number,
-    losses: PropTypes.number,
+    wins: PropTypes.string,
+    losses: PropTypes.string,
     image: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
