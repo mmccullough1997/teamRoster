@@ -28,7 +28,7 @@ export default function Home() {
     <>
       <div>
         <h1 className="homeHeader">Welcome, Coach {user.displayName}!</h1>
-        <Link passHref href="/player/new">
+        <Link passHref href="/player/newPlayer">
           <Button>Add Player</Button>
         </Link>
       </div>
