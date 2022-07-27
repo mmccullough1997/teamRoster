@@ -1,36 +1,42 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from 'react';
-import { getPlayers } from '../api/playersData';
-import PlayerCard from '../components/PlayerCard';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Button } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
+import { getTeams } from '../api/teamData';
 import Search from '../components/Search';
+import TeamCard from '../components/TeamCard';
 
-export default function Home() {
-  const [players, setPlayers] = useState([]);
-  const [filteredPlayers, setFilteredPlayers] = useState([]);
+function Teams() {
+  const [teams, setTeams] = useState([]);
+  const [filteredTeams, setFilteredTeams] = useState([]);
   const { user } = useAuth();
-  // console.warn(user.uid);
 
-  const getAllPlayers = () => {
-    getPlayers(user.uid).then((thePlayers) => {
-      setPlayers(thePlayers);
-      setFilteredPlayers(thePlayers);
+  const getAllTheTeams = () => {
+    getTeams(user.uid).then((theTeams) => {
+      setTeams(theTeams);
+      setFilteredTeams(theTeams);
     });
   };
 
   useEffect(() => {
-    getAllPlayers();
+    getAllTheTeams();
   }, []);
 
   return (
-    <>
-      <h1 className="homeHeader">Welcome, Coach {user.displayName}!</h1>
-      <Search players={players} setFilteredPlayers={setFilteredPlayers} />
+    <div className="text-center my-4">
+      <Link href="/team/new" passHref>
+        <Button>Add Team</Button>
+      </Link>
+      <Search players={teams} setFilteredPlayers={setFilteredTeams} onUpdate={getAllTheTeams} />
       <div className="d-flex flex-wrap">
-        {filteredPlayers.map((player) => (
-          <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllPlayers} />
+        {filteredTeams.map((team) => (
+          <TeamCard key={team.firebaseKey} teamObj={team} onUpdate={getAllTheTeams} />
         ))}
       </div>
-    </>
+
+    </div>
   );
 }
+
+export default Teams;
