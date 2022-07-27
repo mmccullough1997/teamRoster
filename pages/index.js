@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
-import { getTeams } from '../api/teamData';
+import { getPrivateTeams } from '../api/teamData';
 import Search from '../components/Search';
 import TeamCard from '../components/TeamCard';
 
@@ -13,7 +13,7 @@ function Teams() {
   const { user } = useAuth();
 
   const getAllTheTeams = () => {
-    getTeams(user.uid).then((theTeams) => {
+    getPrivateTeams(user.uid).then((theTeams) => {
       setTeams(theTeams);
       setFilteredTeams(theTeams);
     });

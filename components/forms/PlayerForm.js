@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { createPlayer, updatePlayers } from '../../api/playersData';
-import { getTeams } from '../../api/teamData';
+import { getPrivateTeams } from '../../api/teamData';
 
 const initialState = {
   name: '',
@@ -24,7 +24,7 @@ function PlayerForm({ obj }) {
   const { user } = useAuth();
 
   useEffect(() => {
-    getTeams(user.uid).then(setTeams);
+    getPrivateTeams(user.uid).then(setTeams);
     if (obj.firebaseKey) setFormInput(obj);
   }, [obj, user]);
 
