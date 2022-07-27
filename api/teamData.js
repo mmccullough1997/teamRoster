@@ -3,6 +3,8 @@ import { clientCredentials } from '../utils/client';
 
 const dbUrl = clientCredentials.databaseURL;
 
+// YOU SHOULD NOT BE ABLE TO EDIT OR DELETE PUBLIC TEAM OR PLAYERS
+
 const getPrivateTeams = (uid) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/teams.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
@@ -54,7 +56,7 @@ const deletePrivateTeam = (firebaseKey, uid) => new Promise((resolve, reject) =>
 
 const updateTeam = (teamObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/teams/${teamObj.firebaseKey}.json`, teamObj)
-    .then(() => getPrivateTeams(teamObj.uid).then(resolve)) // get all uid-associated authors
+    .then(() => getPrivateTeams(teamObj.uid).then(resolve))
     .catch(reject);
 });
 
