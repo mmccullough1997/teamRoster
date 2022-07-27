@@ -34,7 +34,7 @@ export default function ViewTeam() {
       <div className="text-white ms-5 details">
         <h5>Team Name: {teamDetails.name}</h5>
         <h4>Coach: {user.displayName}</h4>
-        <h3># Players: </h3>
+        <p className="card-text bold"><b># Players:</b> {players.length}</p>
         <h3># Wins: {teamDetails.wins}</h3>
         <h3># Losses: {teamDetails.losses}</h3>
       </div>
