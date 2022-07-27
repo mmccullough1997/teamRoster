@@ -6,7 +6,8 @@
     "losses": 24,
     "name": "Hi",
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
-    "wins": 2
+    "wins": 2,
+    "public": true
   },
   "-N7vXaKf477p-9eI_aPv": {
     "coach": "Mitch McCullough",
@@ -15,7 +16,8 @@
     "losses": 2,
     "name": "GREAT SCOTT",
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
-    "wins": 2
+    "wins": 2,
+    "public": true
   },
   "-N7vXerFj2uMWaFEaHYH": {
     "coach": "Mitch McCullough",
@@ -24,7 +26,8 @@
     "losses": 2,
     "name": "Mighty Ducks",
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
-    "wins": 3
+    "wins": 3,
+    "public": true
   },
   "-N7vXm9iOxVT4HpAhDPu": {
     "coach": "Mitch McCullough",
@@ -33,6 +36,17 @@
     "losses": 2,
     "name": "G-Force",
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
-    "wins": 3
+    "wins": 3,
+    "public": true
+  },
+  "-N7x4_wyyPrGWlsU1LKV": {
+    "coach": "Mitch McCullough",
+    "firebaseKey": "-N7x4_wyyPrGWlsU1LKV",
+    "image": "https://i.ytimg.com/vi/j-ghhdCeF74/maxresdefault.jpg",
+    "losses": 5,
+    "name": "BullzEye",
+    "public": false,
+    "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
+    "wins": 4
   }
 }
