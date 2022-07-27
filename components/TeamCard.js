@@ -1,14 +1,18 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { faTrashCan, faPenToSquare, faEye } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../utils/context/authContext';
 import { deleteTeamsPlayers } from '../api/mergedData';
+import { getSingleTeamsPlayers } from '../api/teamData';
 
 function TeamCard({ teamObj, onUpdate }) {
   const { user } = useAuth();
+  const [playerCount, setPlayerCount] = useState(0);
 
   const deleteTheTeam = () => {
     if (window.confirm(`Delete ${teamObj.name}?`)) {
@@ -16,13 +20,21 @@ function TeamCard({ teamObj, onUpdate }) {
     }
   };
 
+  useEffect(() => {
+    getSingleTeamsPlayers(teamObj.firebaseKey).then((result) => {
+      // console.warn(result);
+      setPlayerCount(result);
+      // console.warn(playerCount);
+    });
+  }, []);
+
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={teamObj.image} alt={teamObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{teamObj.name}</Card.Title>
         <hr />
-        <p className="card-text bold"><b># Players:</b> NEED TO DO</p>
+        <p className="card-text bold"><b># Players:</b> {playerCount.length}</p>
         <p className="card-text bold"><b># Wins:</b> {teamObj.wins}</p>
         <p className="card-text bold"><b># Losses:</b> {teamObj.losses}</p>
         <p className="card-text bold"><b>Coach:</b> {user.displayName}</p>
