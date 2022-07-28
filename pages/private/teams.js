@@ -2,18 +2,18 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-// import { useAuth } from '../utils/context/authContext';
-import { getPublicTeams } from '../api/teamData';
-import Search from '../components/Search';
-import PublicTeamCard from '../components/PublicTeamCard';
+import { useAuth } from '../../utils/context/authContext';
+import { getPrivateTeams } from '../../api/teamData';
+import Search from '../../components/Search';
+import PrivateTeamCard from '../../components/PrivateTeamCard';
 
 function Teams() {
   const [teams, setTeams] = useState([]);
   const [filteredTeams, setFilteredTeams] = useState([]);
-  // const { user } = useAuth();
+  const { user } = useAuth();
 
   const getAllTheTeams = () => {
-    getPublicTeams().then((theTeams) => {
+    getPrivateTeams(user.uid).then((theTeams) => {
       setTeams(theTeams);
       setFilteredTeams(theTeams);
     });
@@ -31,7 +31,7 @@ function Teams() {
       <Search players={teams} setFilteredPlayers={setFilteredTeams} onUpdate={getAllTheTeams} />
       <div className="d-flex flex-wrap">
         {filteredTeams.map((team) => (
-          <PublicTeamCard key={team.firebaseKey} teamObj={team} />
+          <PrivateTeamCard key={team.firebaseKey} teamObj={team} onUpdate={getAllTheTeams} />
         ))}
       </div>
 

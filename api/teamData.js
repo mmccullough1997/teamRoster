@@ -18,7 +18,7 @@ const getPrivateTeams = (uid) => new Promise((resolve, reject) => {
 });
 
 const getPublicTeams = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/teams.json"`)
+  axios.get(`${dbUrl}/teams.json`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));

@@ -3,8 +3,20 @@ import { clientCredentials } from '../utils/client';
 
 const dbUrl = clientCredentials.databaseURL;
 
-const getPlayers = (uid) => new Promise((resolve, reject) => {
+const getPrivatePlayers = (uid) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/players.json?orderBy="uid"&equalTo="${uid}"`)
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch((error) => reject(error));
+});
+
+const getPublicPlayers = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/players.json`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -43,7 +55,8 @@ const updatePlayers = (playerObj) => new Promise((resolve, reject) => {
 });
 
 export {
-  getPlayers,
+  getPrivatePlayers,
+  getPublicPlayers,
   deletePlayer,
   getSinglePlayer,
   createPlayer,

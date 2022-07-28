@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '../../utils/context/authContext';
-import { viewTeamDetails } from '../../api/mergedData';
-import { getSingleTeamsPlayers } from '../../api/teamData';
-import PlayerCard from '../../components/PlayerCard';
+import { useAuth } from '../../../utils/context/authContext';
+import { viewTeamDetails } from '../../../api/mergedData';
+import { getSingleTeamsPlayers } from '../../../api/teamData';
+import PublicPlayerCard from '../../../components/PublicPlayerCard';
 
 export default function ViewTeam() {
   const { user } = useAuth();
@@ -16,9 +16,9 @@ export default function ViewTeam() {
     viewTeamDetails(firebaseKey).then(setTeamDetails);
   }, [firebaseKey]);
 
-  const getAllTheSingleTeamsPlayers = () => {
-    console.warn('Do something?');
-  };
+  // const getAllTheSingleTeamsPlayers = () => {
+  //   console.warn('Do something?');
+  // };
 
   const [players, setPlayers] = useState([]);
 
@@ -40,7 +40,7 @@ export default function ViewTeam() {
       </div>
       <div className="d-flex flex-wrap">
         {players.map((player) => (
-          <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllTheSingleTeamsPlayers} />
+          <PublicPlayerCard key={player.firebaseKey} playerObj={player} />
         ))}
       </div>
     </div>

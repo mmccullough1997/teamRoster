@@ -32,28 +32,6 @@
     "team_id": "-N7vXaKf477p-9eI_aPv",
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2"
   },
-  "-MiBuOfHv9NCKB_cneij": {
-    "age": "8",
-    "favorite_food": "What you're having",
-    "firebaseKey": "-MiBuOfHv9NCKB_cneij",
-    "fun_fact": "The mom of the team",
-    "image": "https://i.pinimg.com/originals/7e/70/d4/7e70d49c9103e6e48093b6c630930dc6.jpg",
-    "name": "Roof Repair",
-    "position": "Kicker",
-    "team_id": "-N7vXerFj2uMWaFEaHYH",
-    "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2"
-  },
-  "-MiBulenBnY8by9Xn7q1": {
-    "age": "4",
-    "favorite_food": "Grass",
-    "firebaseKey": "-MiBulenBnY8by9Xn7q1",
-    "fun_fact": "The wild one",
-    "image": "https://o.b5z.net/i/u/6048053/i/ec/football-player-dog-halloween-costume-zack-zoey-1_i3.jpg",
-    "name": "Bingham Sanctuary",
-    "position": "Offensive Roller",
-    "team_id": "-N7vXerFj2uMWaFEaHYH",
-    "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2"
-  },
   "-MiBv9_aOEJQWoobjz_U": {
     "age": "6",
     "favorite_food": "Cauliflower",
@@ -73,7 +51,51 @@
     "image": "https://thumbs.dreamstime.com/z/fancy-dog-26595608.jpg",
     "name": "Lord Chester, Duke of Earl",
     "position": "Won a contest so has to be included in the roster",
-    "team_id": "-N7vXm9iOxVT4HpAhDPu",
+    "team_id": "-N7x4_wyyPrGWlsU1LKV",
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2"
+  },
+  "-N7xCTzqklM_18f3dbIp": {
+    "age": "34",
+    "favorite_food": "McDonalds",
+    "firebaseKey": "-N7xCTzqklM_18f3dbIp",
+    "fun_fact": "Huh?",
+    "image": "https://i2-prod.dailyrecord.co.uk/incoming/article4172934.ece/ALTERNATES/s615/JS45564194.jpg",
+    "name": "Nate ",
+    "position": "Running Back",
+    "team_id": "-N7x4_wyyPrGWlsU1LKV",
+    "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2"
+  },
+  "-N7xChtU7MWP8dy6e09n": {
+    "age": "11",
+    "favorite_food": "not corn",
+    "firebaseKey": "-N7xChtU7MWP8dy6e09n",
+    "fun_fact": "a good",
+    "image": "http://assets.marthastewart.com/styles/video-preview-1280x720-highdpi/d26/stovetop_corn_on_the_cob_1/stovetop_corn_on_the_cob_1_horiz.jpg?itok=WPta2Yv6",
+    "name": "Corn on the Cob",
+    "position": "Cob Back",
+    "team_id": "-N7vXVKHDenIigfJf_VO",
+    "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2"
+  },
+  "-N84fv5zZHEHH9NO2OzV": {
+    "age": "4",
+    "favorite_food": "Grass",
+    "firebaseKey": "-N84fv5zZHEHH9NO2OzV",
+    "fun_fact": "Drinks out of the Milk",
+    "image": "http://cdn.akc.org/content/article-body-image/parson_russell_terrier_athletes_.jpg",
+    "name": "Lord Dog",
+    "position": "Cornerback",
+    "team_id": "-N7vXm9iOxVT4HpAhDPu",
+    "uid": ""
+  },
+  "-N84g4DleRaafiDcQ9rf": {
+    "age": "3.5",
+    "favorite_food": "Grass",
+    "firebaseKey": "-N84g4DleRaafiDcQ9rf",
+    "fun_fact": "Good boy",
+    "image": "https://breedingbusiness.com/wp-content/uploads/2020/01/sport-inspired-dog-names-800x472.jpg",
+    "name": "Snoop Dog",
+    "position": "Cornerback",
+    "team_id": "-N7vXm9iOxVT4HpAhDPu",
+    "uid": ""
   }
 }
