@@ -14,8 +14,9 @@ function Teams() {
 
   const getAllTheTeams = () => {
     getPublicTeams().then((theTeams) => {
-      setTeams(theTeams);
-      setFilteredTeams(theTeams);
+      const publicTeams = theTeams.filter((team) => team.public === true);
+      setTeams(publicTeams);
+      setFilteredTeams(publicTeams);
     });
   };
 
@@ -31,7 +32,7 @@ function Teams() {
       <Search players={teams} setFilteredPlayers={setFilteredTeams} onUpdate={getAllTheTeams} />
       <div className="d-flex flex-wrap">
         {filteredTeams.map((team) => (
-          <PublicTeamCard key={team.firebaseKey} teamObj={team} />
+          <PublicTeamCard key={team.firebaseKey} teamObj={team} onUpdate={getAllTheTeams} />
         ))}
       </div>
 
