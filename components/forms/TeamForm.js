@@ -40,11 +40,11 @@ function TeamForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateTeam(formInput)
-        .then(() => router.push('/'));
+        .then(() => router.push('/private/teams'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createTeam(payload).then(() => {
-        router.push('/');
+        router.push('/private/teams');
       });
     }
   };
