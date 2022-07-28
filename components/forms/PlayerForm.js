@@ -101,7 +101,7 @@ function PlayerForm({ obj }) {
       </FloatingLabel>
 
       <FloatingLabel controlId="floatingInput2" label="Player Image" className="mb-3">
-        <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.image} onChange={handleChange} required />
+        <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.image} onChange={handleChange} />
       </FloatingLabel>
 
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Player</Button>
