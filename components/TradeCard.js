@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -38,6 +39,7 @@ function TradeCard({ tradeObj, onUpdate }) {
         <p className="card-text bold"><b>To Trade With:</b> {toTeamName}</p>
         <p className="card-text bold"><b>You:</b> {fromCoachName}</p>
         <p className="card-text bold"><b>Them:</b> {toCoachName}</p>
+        <p className="card-text bold"><b>Trade Status</b> {tradeObj.accepted === false && tradeObj.rejected === false ? 'Pending' : tradeObj.accepted === true && tradeObj.rejected === false ? 'Accepted' : tradeObj.accepted === false && tradeObj.rejected === true ? 'Rejected' : 'Waiting'}</p>
 
         {/* <Link href={`/team/edit/${teamObj.firebaseKey}`} passHref>
           <Button variant="info"><FontAwesomeIcon icon={faPenToSquare} /></Button>
@@ -57,6 +59,8 @@ TradeCard.propTypes = {
     toCoach_uid: PropTypes.string,
     fromTeam_id: PropTypes.string,
     toTeam_id: PropTypes.string,
+    rejected: PropTypes.bool,
+    accepted: PropTypes.bool,
     firebaseKey: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,

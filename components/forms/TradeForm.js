@@ -16,6 +16,7 @@ const initialState = {
   toCoach_uid: '',
   date: '',
   accepted: false,
+  rejected: false,
 };
 
 function TradeForm({ obj }) {
