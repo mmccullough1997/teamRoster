@@ -3,8 +3,8 @@ import { clientCredentials } from '../utils/client';
 
 const dbUrl = clientCredentials.databaseURL;
 
-const getTrades = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/trades.json`)
+const getPrivateTrades = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/trades.json?orderBy="fromCoach_uid"&equalTo="${uid}"`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -24,10 +24,20 @@ const createTrade = (tradeObj) => new Promise((resolve, reject) => {
     }).catch(reject);
 });
 
-const updateTrade = (tradeObj) => new Promise((resolve, reject) => {
+const updatePrivateTrade = (tradeObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/trades/${tradeObj.firebaseKey}.json`, tradeObj)
-    .then(() => getTrades().then(resolve))
+    .then(() => getPrivateTrades(tradeObj.fromCoach_uid).then(resolve))
     .catch(reject);
 });
 
-export { createTrade, updateTrade };
+const deletePrivateTrade = (firebaseKey, uid) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/trades/${firebaseKey}.json`)
+    .then(() => {
+      getPrivateTrades(uid).then((tradeArray) => resolve(tradeArray));
+    })
+    .catch((error) => reject(error));
+});
+
+export {
+  getPrivateTrades, createTrade, updatePrivateTrade, deletePrivateTrade,
+};

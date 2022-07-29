@@ -57,7 +57,7 @@ function TradeForm({ obj }) {
         ...formInput, fromCoach_uid: user.uid, date, toCoach_uid: toCoachUid,
       };
       createTrade(payload).then(() => {
-        router.push('/');
+        router.push('/private/trades');
       });
     });
   };

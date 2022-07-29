@@ -28,6 +28,9 @@ export default function NavBar() {
             <Link passHref href="/private/players">
               <Nav.Link>My Players</Nav.Link>
             </Link>
+            <Link passHref href="/private/trades">
+              <Nav.Link>My Trades</Nav.Link>
+            </Link>
             <Link passHref href="/profile">
               <Nav.Link>Profile</Nav.Link>
             </Link>
