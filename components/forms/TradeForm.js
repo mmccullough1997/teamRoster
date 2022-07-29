@@ -6,7 +6,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
-import { getPublicTeams } from '../../api/teamData';
+import { getPublicTeams, getSingleTeam } from '../../api/teamData';
 import { createTrade } from '../../api/tradeData';
 
 const initialState = {
@@ -23,6 +23,7 @@ function TradeForm({ obj }) {
   // const [teams, setTeams] = useState([]);
   const [userTeams, setUserTeams] = useState([]);
   const [nonUserTeams, setNonUserTeams] = useState([]);
+  // eslint-disable-next-line camelcase
   const router = useRouter();
   const { user } = useAuth();
 
@@ -49,10 +50,15 @@ function TradeForm({ obj }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const date = new Date().toLocaleString();
-    const payload = { ...formInput, fromCoach_uid: user.uid, date };
-    createTrade(payload).then(() => {
-      router.push('/');
+    getSingleTeam(formInput.toTeam_id).then((team) => {
+      const toCoachUid = team.uid;
+      const date = new Date().toLocaleString();
+      const payload = {
+        ...formInput, fromCoach_uid: user.uid, date, toCoach_uid: toCoachUid,
+      };
+      createTrade(payload).then(() => {
+        router.push('/');
+      });
     });
   };
 
