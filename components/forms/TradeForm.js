@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { getPublicTeams } from '../../api/teamData';
-import createTrade from '../../api/tradeData';
+import { createTrade } from '../../api/tradeData';
 
 const initialState = {
   fromTeam_id: '',
@@ -32,8 +32,6 @@ function TradeForm({ obj }) {
       const filteredNonUserTeams = teams.filter((team) => team.uid !== user.uid);
       setUserTeams(filteredUserTeams);
       setNonUserTeams(filteredNonUserTeams);
-      console.warn(userTeams);
-      console.warn(nonUserTeams);
     });
   }, []);
 
