@@ -17,7 +17,7 @@ export default function Search({ players, setFilteredPlayers, onUpdate }) {
 
   return (
     <>
-      <input placeholder="Search" value={searchInput} onChange={handleChange} />
+      <input className="search" placeholder="Search" value={searchInput} onChange={handleChange} />
     </>
   );
 }

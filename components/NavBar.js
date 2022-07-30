@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {
   Navbar, Container, Nav,
 } from 'react-bootstrap';
+import TradeBadge from './TradeBadge';
 
 export default function NavBar() {
   return (
@@ -28,6 +29,7 @@ export default function NavBar() {
             <Link passHref href="/private/trades">
               <Nav.Link>My Trades</Nav.Link>
             </Link>
+            <TradeBadge />
             <Link passHref href="/profile">
               <Nav.Link>Profile</Nav.Link>
             </Link>
