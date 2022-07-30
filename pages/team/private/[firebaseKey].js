@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { Button } from 'react-bootstrap';
 import { useAuth } from '../../../utils/context/authContext';
 import { viewTeamDetails } from '../../../api/mergedData';
 import { getSingleTeamsPlayers } from '../../../api/teamData';
@@ -40,9 +38,6 @@ export default function ViewTeam() {
         <h3># Wins: {teamDetails.wins}</h3>
         <h3># Losses: {teamDetails.losses}</h3>
       </div>
-      <Link passHref href="/player/newPlayer">
-        <Button>Add Player</Button>
-      </Link>
       <div className="d-flex flex-wrap">
         {players.map((player) => (
           <PrivatePlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllTheSingleTeamsPlayers} />
