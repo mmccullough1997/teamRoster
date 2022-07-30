@@ -28,9 +28,11 @@ export default function Trades() {
         <Link passHref href="/trade/newTrade">
           <Button>New Trade</Button>
         </Link>
-        {trades.map((trade) => (
-          <TradeCard key={trade.firebaseKey} tradeObj={trade} onUpdate={getAllTrades} />
-        ))}
+        <div className="d-flex flex-wrap">
+          {trades.map((trade) => (
+            <TradeCard key={trade.firebaseKey} tradeObj={trade} onUpdate={getAllTrades} />
+          ))}
+        </div>
       </div>
     </div>
   );
