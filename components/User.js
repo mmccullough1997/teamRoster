@@ -9,15 +9,17 @@ function User({
   image, name, email, lastLogin,
 }) {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={image} alt={name} />
-      <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>{email}</Card.Text>
-        <Card.Text>{lastLogin}</Card.Text>
-      </Card.Body>
-      <button type="button" className="btn btn-danger" onClick={signOut}>Sign Out</button>
-    </Card>
+    <div className="text-center my-4">
+      <Card className="profileCard" style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={image} alt={name} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>{email}</Card.Text>
+          <Card.Text>{lastLogin}</Card.Text>
+        </Card.Body>
+        <button type="button" className="btn btn-danger" onClick={signOut}>Sign Out</button>
+      </Card>
+    </div>
   );
 }
 

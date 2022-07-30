@@ -25,3 +25,35 @@ body {
 .homeHeader {
   font-family: 'Square Peg';
 }
+
+.profileCard {
+  margin: 50px;
+}
+
+.tradeCard{
+  margin-top: 20px;
+}
+
+.privatePlayerCard {
+  margin: 10px;
+}
+.publicPlayerCard {
+  margin: 10px;
+}
+.privateTeamCard {
+  margin: 10px;
+}
+.publicTeamCard {
+  margin: 10px;
+}
+
+.addPlayerButton{
+  margin-bottom:10px;
+}
+
+.addTeamButton{
+  margin-bottom:10px;
+}
+.tradeTeamButton{
+  margin-bottom:10px;
+}
