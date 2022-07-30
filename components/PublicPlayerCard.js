@@ -14,7 +14,7 @@ function PublicPlayerCard({ playerObj }) {
   }, []);
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className="publicPlayerCard" style={{ width: '18rem' }}>
       <Card.Img variant="top" src={playerObj.image} alt={playerObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{playerObj.name}</Card.Title>

@@ -23,16 +23,15 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <div>
-        <h1 className="homeHeader">Welcome, Coach {user.displayName}!</h1>
-      </div>
+    <div className="text-center my-4">
+      <h1>All Players</h1>
+      <h2 className="homeHeader">Welcome, Coach {user.displayName}!</h2>
       <Search players={players} setFilteredPlayers={setFilteredPlayers} onUpdate={getAllPlayers} />
       <div className="d-flex flex-wrap">
         {filteredPlayers.map((player) => (
           <PublicPlayerCard key={player.firebaseKey} playerObj={player} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

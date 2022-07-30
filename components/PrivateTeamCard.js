@@ -30,7 +30,7 @@ function PrivateTeamCard({ teamObj, onUpdate }) {
   }, []);
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className="privateTeamCard" style={{ width: '18rem' }}>
       <Card.Img variant="top" src={teamObj.image} alt={teamObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{teamObj.name}</Card.Title>

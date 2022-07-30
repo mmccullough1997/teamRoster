@@ -31,7 +31,7 @@ function TradeCard({ tradeObj, onUpdate }) {
   });
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className="tradeCard" style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>Trade # {tradeObj.firebaseKey}</Card.Title>
         <hr />

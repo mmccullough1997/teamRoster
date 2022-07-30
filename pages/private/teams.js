@@ -25,9 +25,12 @@ function Teams() {
 
   return (
     <div className="text-center my-4">
-      <Link href="/team/new" passHref>
-        <Button>Add Team</Button>
-      </Link>
+      <div>
+        <h1>My Teams</h1>
+        <Link href="/team/new" passHref>
+          <Button className="addTeamButton">Add Team</Button>
+        </Link>
+      </div>
       <Search players={teams} setFilteredPlayers={setFilteredTeams} onUpdate={getAllTheTeams} />
       <div className="d-flex flex-wrap">
         {filteredTeams.map((team) => (

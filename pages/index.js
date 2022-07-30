@@ -26,10 +26,13 @@ function Teams() {
 
   return (
     <div className="text-center my-4">
+      <div>
+        <h1>All Teams</h1>
+        <Link passHref href="/team/trade">
+          <Button className="tradeTeamButton">Trade Team</Button>
+        </Link>
+      </div>
       <Search players={teams} setFilteredPlayers={setFilteredTeams} onUpdate={getAllTheTeams} />
-      <Link passHref href="/team/trade">
-        <Button>Trade Team</Button>
-      </Link>
       <div className="d-flex flex-wrap">
         {filteredTeams.map((team) => (
           <PublicTeamCard key={team.firebaseKey} teamObj={team} onUpdate={getAllTheTeams} />

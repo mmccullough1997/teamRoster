@@ -24,7 +24,7 @@ function PrivatePlayerCard({ playerObj, onUpdate }) {
   }, []);
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className="privatePlayerCard" style={{ width: '18rem' }}>
       <Card.Img variant="top" src={playerObj.image} alt={playerObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{playerObj.name}</Card.Title>

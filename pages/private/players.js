@@ -25,11 +25,11 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className="text-center my-4">
       <div>
-        <h1 className="homeHeader">Welcome, Coach {user.displayName}!</h1>
+        <h1>My Players</h1>
         <Link passHref href="/player/newPlayer">
-          <Button>Add Player</Button>
+          <Button className="addPlayerButton">Add Player</Button>
         </Link>
       </div>
       <Search players={players} setFilteredPlayers={setFilteredPlayers} onUpdate={getAllPlayers} />
@@ -38,6 +38,6 @@ export default function Home() {
           <PrivatePlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllPlayers} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

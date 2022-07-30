@@ -22,9 +22,9 @@ export default function Trades() {
   }, []);
 
   return (
-    <>
+    <div className="text-center my-4">
       <div>
-        <h1 className="homeHeader">Welcome, Coach {user.displayName}!</h1>
+        <h1>My Trades</h1>
         <Link passHref href="/trade/newTrade">
           <Button>New Trade</Button>
         </Link>
@@ -32,6 +32,6 @@ export default function Trades() {
           <TradeCard key={trade.firebaseKey} tradeObj={trade} onUpdate={getAllTrades} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
