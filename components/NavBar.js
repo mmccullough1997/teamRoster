@@ -13,14 +13,20 @@ export default function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             {/* CLOSE NAVBAR ON LINK SELECTION: https://stackoverflow.com/questions/72813635/collapse-on-select-react-bootstrap-navbar-with-nextjs-not-working */}
-            <Link passHref href="/">
-              <Nav.Link>Teams</Nav.Link>
-            </Link>
-            <Link passHref href="/players">
-              <Nav.Link>Players</Nav.Link>
-            </Link>
             <Link passHref href="/team/new">
               <Nav.Link>Add Team</Nav.Link>
+            </Link>
+            <Link passHref href="/">
+              <Nav.Link>All Teams</Nav.Link>
+            </Link>
+            <Link passHref href="/public/players">
+              <Nav.Link>All Players</Nav.Link>
+            </Link>
+            <Link passHref href="/private/teams">
+              <Nav.Link>My Teams</Nav.Link>
+            </Link>
+            <Link passHref href="/private/players">
+              <Nav.Link>My Players</Nav.Link>
             </Link>
             <Link passHref href="/profile">
               <Nav.Link>Profile</Nav.Link>

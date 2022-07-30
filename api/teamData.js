@@ -3,8 +3,22 @@ import { clientCredentials } from '../utils/client';
 
 const dbUrl = clientCredentials.databaseURL;
 
-const getTeams = (uid) => new Promise((resolve, reject) => {
+// YOU SHOULD NOT BE ABLE TO EDIT OR DELETE PUBLIC TEAM OR PLAYERS
+
+const getPrivateTeams = (uid) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/teams.json?orderBy="uid"&equalTo="${uid}"`)
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch((error) => reject(error));
+});
+
+const getPublicTeams = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/teams.json`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -21,7 +35,7 @@ const createTeam = (teamObj) => new Promise((resolve, reject) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/teams/${response.data.name}.json`, payload) // patch with firebase id
         .then(() => {
-          getTeams(teamObj.uid).then(resolve);
+          getPrivateTeams(teamObj.uid).then(resolve);
         });
     }).catch(reject);
 });
@@ -32,17 +46,17 @@ const getSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const deleteTeam = (firebaseKey, uid) => new Promise((resolve, reject) => {
+const deletePrivateTeam = (firebaseKey, uid) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/teams/${firebaseKey}.json`)
     .then(() => {
-      getTeams(uid).then((teamsArray) => resolve(teamsArray));
+      getPrivateTeams(uid).then((teamsArray) => resolve(teamsArray));
     })
     .catch((error) => reject(error));
 });
 
 const updateTeam = (teamObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/teams/${teamObj.firebaseKey}.json`, teamObj)
-    .then(() => getTeams(teamObj.uid).then(resolve)) // get all uid-associated authors
+    .then(() => getPrivateTeams(teamObj.uid).then(resolve))
     .catch(reject);
 });
 
@@ -61,10 +75,11 @@ const getTeamName = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export {
-  getTeams,
+  getPrivateTeams,
+  getPublicTeams,
   createTeam,
   getSingleTeam,
-  deleteTeam,
+  deletePrivateTeam,
   updateTeam,
   getSingleTeamsPlayers,
   getTeamName,

@@ -5,6 +5,7 @@
     "image": "https://images.template.net/wp-content/uploads/2017/01/23203410/Gaming-Team-Logo.jpg",
     "losses": 24,
     "name": "Hi",
+    "public": true,
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
     "wins": 2
   },
@@ -14,17 +15,9 @@
     "image": "https://img.freepik.com/premium-vector/hands-connecting_23-2147506270.jpg?w=2000",
     "losses": 2,
     "name": "GREAT SCOTT",
+    "public": true,
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
     "wins": 2
-  },
-  "-N7vXerFj2uMWaFEaHYH": {
-    "coach": "Mitch McCullough",
-    "firebaseKey": "-N7vXerFj2uMWaFEaHYH",
-    "image": "https://img.freepik.com/premium-vector/e-sports-team-logo-with-samurai-head_113398-6.jpg",
-    "losses": 2,
-    "name": "Mighty Ducks",
-    "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
-    "wins": 3
   },
   "-N7vXm9iOxVT4HpAhDPu": {
     "coach": "Mitch McCullough",
@@ -32,7 +25,38 @@
     "image": "https://i.pinimg.com/474x/07/b1/33/07b133e78156c97e369946d65b4bfef6.jpg",
     "losses": 2,
     "name": "G-Force",
+    "public": true,
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
     "wins": 3
+  },
+  "-N7x4_wyyPrGWlsU1LKV": {
+    "coach": "Mitch McCullough",
+    "firebaseKey": "-N7x4_wyyPrGWlsU1LKV",
+    "image": "https://i.ytimg.com/vi/j-ghhdCeF74/maxresdefault.jpg",
+    "losses": 5,
+    "name": "BullzEye",
+    "public": false,
+    "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
+    "wins": 4
+  },
+  "-N84hybCtHPdiF44QVtr": {
+    "coach": "Mitch McCullough",
+    "firebaseKey": "-N84hybCtHPdiF44QVtr",
+    "image": "https://www.tailorbrands.com/wp-content/uploads/2020/07/mcdonalds-logo.jpg",
+    "losses": 6,
+    "name": "Dream Team",
+    "public": true,
+    "uid": "",
+    "wins": 4
+  },
+  "-N84i524OubKKyYtFOP_": {
+    "coach": "Nate",
+    "firebaseKey": "-N84i524OubKKyYtFOP_",
+    "image": "https://www.adobe.com/express/create/media_127a4cd0c28c2753638768caf8967503d38d01e4c.jpeg?width=400&format=jpeg&optimize=medium",
+    "losses": 6,
+    "name": "Golden View",
+    "public": true,
+    "uid": "",
+    "wins": 4
   }
 }

@@ -9,7 +9,7 @@ import Card from 'react-bootstrap/Card';
 import { deletePlayer } from '../api/playersData';
 import { getTeamName } from '../api/teamData';
 
-function PlayerCard({ playerObj, onUpdate }) {
+function PrivatePlayerCard({ playerObj, onUpdate }) {
   const [teamName, setTeamName] = useState('');
   const deleteThePlayer = () => {
     if (window.confirm(`Delete ${playerObj.name}?`)) {
@@ -45,7 +45,7 @@ function PlayerCard({ playerObj, onUpdate }) {
   );
 }
 
-PlayerCard.propTypes = {
+PrivatePlayerCard.propTypes = {
   playerObj: PropTypes.shape({
     name: PropTypes.string,
     position: PropTypes.string,
@@ -59,4 +59,4 @@ PlayerCard.propTypes = {
   onUpdate: PropTypes.func.isRequired,
 };
 
-export default PlayerCard;
+export default PrivatePlayerCard;

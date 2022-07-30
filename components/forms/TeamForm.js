@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
+import PropTypes, { bool } from 'prop-types';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
@@ -40,11 +40,11 @@ function TeamForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateTeam(formInput)
-        .then(() => router.push('/'));
+        .then(() => router.push('/private/teams'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createTeam(payload).then(() => {
-        router.push('/');
+        router.push('/private/teams');
       });
     }
   };
@@ -73,9 +73,23 @@ function TeamForm({ obj }) {
 
       <FloatingLabel controlId="floatingInput4" label="Image" className="mb-3">
 
-        <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.image} onChange={handleChange} required />
+        <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.image} onChange={handleChange} />
 
       </FloatingLabel>
+
+      <Form.Check
+        className="text-white mb-3"
+        type="switch"
+        id="public"
+        name="public"
+        label="Public?"
+        checked={formInput.public}
+        onChange={(e) => setFormInput((prevState) => ({
+          ...prevState,
+          public: e.target.checked,
+        }))}
+      />
+
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Team</Button>
     </Form>
   );
@@ -87,6 +101,7 @@ TeamForm.propTypes = {
     wins: PropTypes.string,
     losses: PropTypes.string,
     image: PropTypes.string,
+    public: bool,
     firebaseKey: PropTypes.string,
   }),
 };

@@ -10,7 +10,7 @@ import { useAuth } from '../utils/context/authContext';
 import { deleteTeamsPlayers } from '../api/mergedData';
 import { getSingleTeamsPlayers } from '../api/teamData';
 
-function TeamCard({ teamObj, onUpdate }) {
+function PrivateTeamCard({ teamObj, onUpdate }) {
   const { user } = useAuth();
   const [playerCount, setPlayerCount] = useState(0);
 
@@ -39,7 +39,7 @@ function TeamCard({ teamObj, onUpdate }) {
         <p className="card-text bold"><b># Losses:</b> {teamObj.losses}</p>
         <p className="card-text bold"><b>Coach:</b> {user.displayName}</p>
 
-        <Link href={`/team/${teamObj.firebaseKey}`} passHref>
+        <Link href={`/team/private/${teamObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2"><FontAwesomeIcon icon={faEye} /></Button>
         </Link>
         <Link href={`/team/edit/${teamObj.firebaseKey}`} passHref>
@@ -53,7 +53,7 @@ function TeamCard({ teamObj, onUpdate }) {
   );
 }
 
-TeamCard.propTypes = {
+PrivateTeamCard.propTypes = {
   teamObj: PropTypes.shape({
     name: PropTypes.string,
     wins: PropTypes.string,
@@ -65,4 +65,4 @@ TeamCard.propTypes = {
   onUpdate: PropTypes.func.isRequired,
 };
 
-export default TeamCard;
+export default PrivateTeamCard;
