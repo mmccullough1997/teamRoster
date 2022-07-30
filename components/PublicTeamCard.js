@@ -7,11 +7,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useState, useEffect } from 'react';
 import { faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
-import { useAuth } from '../utils/context/authContext';
 import { getSingleTeamsPlayers } from '../api/teamData';
 
 function PublicTeamCard({ teamObj }) {
-  const { user } = useAuth();
   const [playerCount, setPlayerCount] = useState(0);
 
   useEffect(() => {
@@ -31,7 +29,7 @@ function PublicTeamCard({ teamObj }) {
         <p className="card-text bold"><b># Players:</b> {playerCount.length}</p>
         <p className="card-text bold"><b># Wins:</b> {teamObj.wins}</p>
         <p className="card-text bold"><b># Losses:</b> {teamObj.losses}</p>
-        <p className="card-text bold"><b>Coach:</b> {user.displayName}</p>
+        <p className="card-text bold"><b>Coach:</b> {teamObj.coach}</p>
         <p className="card-text bold">{teamObj.public ? <FontAwesomeIcon icon={faUnlock} /> : <FontAwesomeIcon icon={faLock} />}</p>
         <Link href={`/team/public/${teamObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2"><FontAwesomeIcon icon={faEye} /></Button>

@@ -20,7 +20,8 @@ a {
 }
 
 body {
-  background-color: black;
+  background-color: white;
+  color: black;
 }
 
 .homeHeader {

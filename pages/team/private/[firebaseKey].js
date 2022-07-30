@@ -31,7 +31,7 @@ export default function ViewTeam() {
       <div className="d-flex flex-column">
         <img src={teamDetails.image} alt={teamDetails.name} style={{ width: '300px' }} />
       </div>
-      <div className="text-white ms-5 details">
+      <div className="ms-5 details">
         <h5>Team Name: {teamDetails.name}</h5>
         <h4>Coach: {user.displayName}</h4>
         <p className="card-text bold"><b># Players:</b> {players.length}</p>
