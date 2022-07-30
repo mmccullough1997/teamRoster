@@ -14,7 +14,7 @@
     "firebaseKey": "-N7vXaKf477p-9eI_aPv",
     "image": "https://img.freepik.com/premium-vector/hands-connecting_23-2147506270.jpg?w=2000",
     "losses": 2,
-    "name": "GREAT SCOTT",
+    "name": "The Comeback Team",
     "public": true,
     "uid": "Jl4EpVFSZFfYFEncQU95oaxBY8b2",
     "wins": 2
@@ -40,13 +40,13 @@
     "wins": 4
   },
   "-N84hybCtHPdiF44QVtr": {
-    "coach": "Mitch McCullough",
+    "coach": "Nate Jr.",
     "firebaseKey": "-N84hybCtHPdiF44QVtr",
     "image": "https://www.tailorbrands.com/wp-content/uploads/2020/07/mcdonalds-logo.jpg",
     "losses": 6,
     "name": "Dream Team",
     "public": true,
-    "uid": "",
+    "uid": "ZyixR8MFqxYizSe9Si0eM1CmG2i2",
     "wins": 4
   },
   "-N84i524OubKKyYtFOP_": {
@@ -56,7 +56,7 @@
     "losses": 6,
     "name": "Golden View",
     "public": true,
-    "uid": "",
+    "uid": "ZyixR8MFqxYizSe9Si0eM1CmG2i2",
     "wins": 4
   }
 }
